@@ -455,7 +455,7 @@ const DATA = {
   ],
 
   // Your Formspree form ID — replace YOUR_FORM_ID below (sign up at formspree.io)
-  formspreeId: "YOUR_FORM_ID",
+  formspreeId: "mykqnwbn",
 
   footerText: "© 2026 Akram Taha Zeyad · Built with ❤️ and plain HTML"
 };
@@ -476,7 +476,24 @@ if(DATA.photo){
   heroImg.alt = DATA.name + " portrait photo";
 }
 if(DATA.resumeUrl){
-  document.getElementById('cv-download-btn').href = DATA.resumeUrl;
+  const cvBtn = document.getElementById('cv-download-btn');
+  cvBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    try{
+      const base64 = DATA.resumeUrl.split(',')[1];
+      const byteChars = atob(base64);
+      const byteNumbers = new Array(byteChars.length);
+      for (let i = 0; i < byteChars.length; i++){
+        byteNumbers[i] = byteChars.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'application/pdf' });
+      const blobUrl = URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+    } catch(err){
+      alert('Could not open CV. Please try again.');
+    }
+  });
 }
 
 const metaEl = document.getElementById('hero-meta');
