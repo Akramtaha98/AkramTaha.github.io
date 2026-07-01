@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akram — Researcher Profile</title>
+<title>Akram Taha Zeyad — AI Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
 /* ============================================================
-   EDIT YOUR INFO HERE  ->  scroll to the JS "DATA" object below
-   (search for "EDIT ZONE" — everything else is layout/styling)
+   EDIT YOUR INFO -> scroll down to the JS "DATA" object
+   (search "EDIT ZONE") — everything else is layout/styling
    ============================================================ */
 
 :root{
@@ -18,204 +18,133 @@
   --ink:#1c1a16;
   --ink-soft:#5a564c;
   --line:#d8d2c2;
-  --accent:#8a3b2b;      /* terracotta-brick, nods to manuscript seals */
+  --accent:#8a3b2b;
   --accent-soft:#e7d9c9;
-  --teal:#3a5a56;        /* secondary accent, calligraphy-ink teal */
+  --teal:#3a5a56;
   --card:#fffdf8;
   --radius:2px;
 }
-
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'IBM Plex Sans',sans-serif;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
 ::selection{background:var(--accent-soft);}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+img{max-width:100%;}
 
-.wrap{max-width:880px;margin:0 auto;padding:0 28px;}
-
-/* ---------- header / nav ---------- */
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(246,243,236,0.92);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  max-width:880px;margin:0 auto;padding:16px 28px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.wordmark{
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;
-  letter-spacing:0.01em;
-}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(246,243,236,0.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:900px;margin:0 auto;padding:15px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+.wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;}
 .wordmark span{color:var(--accent);}
-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;}
-nav a{
-  color:var(--ink-soft);text-decoration:none;font-size:0.92rem;
-  font-weight:500;transition:color .15s;
-}
+nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap;}
+nav a{color:var(--ink-soft);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color .15s;}
 nav a:hover{color:var(--accent);}
 
-/* ---------- hero ---------- */
-.hero{padding:74px 0 56px;position:relative;overflow:hidden;}
-.hero::before{
-  content:"";position:absolute;top:-40px;right:-60px;width:260px;height:260px;
-  background:
-    repeating-conic-gradient(from 0deg, var(--accent-soft) 0deg 8deg, transparent 8deg 20deg);
-  border-radius:50%;
-  opacity:0.5;
-  z-index:0;
-}
+/* hero */
+.hero{padding:64px 0 48px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-40px;right:-60px;width:260px;height:260px;background:repeating-conic-gradient(from 0deg, var(--accent-soft) 0deg 8deg, transparent 8deg 20deg);border-radius:50%;opacity:0.5;z-index:0;}
 .hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:40px;justify-content:space-between;}
 .hero-text{flex:1;min-width:0;}
-.hero-photo{
-  flex-shrink:0;width:168px;height:168px;border-radius:50%;
-  overflow:hidden;border:3px solid var(--card);
-  box-shadow:0 0 0 1px var(--line), 0 14px 30px rgba(28,26,22,0.14);
-  position:relative;
-}
+.hero-photo{flex-shrink:0;width:156px;height:156px;border-radius:50%;overflow:hidden;border:3px solid var(--card);box-shadow:0 0 0 1px var(--line),0 14px 30px rgba(28,26,22,0.14);position:relative;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-photo::after{
-  content:"";position:absolute;inset:0;border-radius:50%;
-  border:1px solid var(--accent-soft);
-}
-@media(max-width:640px){
-  .hero-inner{flex-direction:column-reverse;text-align:left;gap:24px;}
-  .hero-photo{width:120px;height:120px;}
-}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
-  color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;
-  display:flex;align-items:center;gap:10px;margin-bottom:18px;
-}
+.hero-photo::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--accent-soft);}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:16px;}
 .eyebrow::before{content:"";width:22px;height:1px;background:var(--teal);}
-h1{
-  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,5vw,3.3rem);
-  line-height:1.08;margin:0 0 18px;max-width:11ch;
-}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.1;margin:0 0 14px;}
 h1 em{font-style:italic;color:var(--accent);font-weight:500;}
-.lede{
-  font-size:1.08rem;color:var(--ink-soft);max-width:56ch;margin:0 0 28px;
-}
-.hero-meta{
-  display:flex;flex-wrap:wrap;gap:10px 22px;
-  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--ink-soft);
-}
+.lede{font-size:1.02rem;color:var(--ink-soft);max-width:58ch;margin:0 0 22px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--ink-soft);margin-bottom:24px;}
 .hero-meta span{display:flex;align-items:center;gap:6px;}
 .hero-meta b{color:var(--ink);font-weight:500;}
-
-.cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:11px 20px;border-radius:var(--radius);
-  font-size:0.92rem;font-weight:500;text-decoration:none;
-  border:1px solid var(--ink);transition:all .15s;
-}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--radius);font-size:0.88rem;font-weight:500;text-decoration:none;border:1px solid var(--ink);transition:all .15s;}
 .btn-solid{background:var(--ink);color:var(--paper);}
 .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
 .btn-outline{color:var(--ink);}
 .btn-outline:hover{background:var(--ink);color:var(--paper);}
 
-/* ---------- section framing ---------- */
-section{padding:52px 0;border-top:1px solid var(--line);}
-.section-head{
-  display:flex;justify-content:space-between;align-items:baseline;
-  margin-bottom:30px;gap:20px;
-}
-.section-head h2{
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.55rem;margin:0;
-}
-.section-head .tag{
-  font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--ink-soft);
-  text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;
+@media(max-width:640px){
+  .hero-inner{flex-direction:column-reverse;text-align:left;gap:22px;}
+  .hero-photo{width:112px;height:112px;}
 }
 
-/* ---------- latest work (featured) ---------- */
-.feature-card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px;margin-bottom:18px;position:relative;
-  border-left:3px solid var(--accent);
-}
-.feature-card .kicker{
-  font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--accent);
-  text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px;display:block;
-}
-.feature-card h3{font-family:'Fraunces',serif;font-size:1.32rem;margin:0 0 10px;font-weight:600;}
-.feature-card p{color:var(--ink-soft);margin:0 0 16px;font-size:0.97rem;}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.tag-pill{
-  font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--teal);
-  background:rgba(58,90,86,0.09);padding:4px 10px;border-radius:20px;
-}
-.feature-links a{
-  color:var(--ink);font-size:0.9rem;font-weight:500;text-decoration:none;
-  border-bottom:1px solid var(--accent);margin-right:20px;
-}
+/* updates ticker */
+.updates{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:var(--radius);padding:18px 22px;margin-bottom:8px;}
+.updates .u-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal);margin-bottom:10px;display:block;}
+.updates ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.updates li{font-size:0.88rem;color:var(--ink-soft);}
+.updates li b{color:var(--ink);font-weight:500;}
+
+/* sections */
+section{padding:48px 0;border-top:1px solid var(--line);}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px;gap:20px;}
+.section-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;margin:0;}
+.section-head .tag{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;}
+
+/* featured work card */
+.feature-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:16px;border-left:3px solid var(--accent);}
+.feature-card .kicker{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px;display:block;}
+.feature-card h3{font-family:'Fraunces',serif;font-size:1.28rem;margin:0 0 10px;font-weight:600;}
+.feature-card p{color:var(--ink-soft);margin:0 0 14px;font-size:0.95rem;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.tag-pill{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--teal);background:rgba(58,90,86,0.09);padding:4px 10px;border-radius:20px;}
+.feature-links a{color:var(--ink);font-size:0.87rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent);margin-right:18px;}
 .feature-links a:hover{color:var(--accent);}
 
-/* ---------- projects / papers grid ---------- */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.item-card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:22px;display:flex;flex-direction:column;
-}
-.item-card .status{
-  font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ink-soft);
-  text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;
-}
+/* timeline (experience / education) */
+.timeline{position:relative;padding-left:26px;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+.t-item{position:relative;padding-bottom:30px;}
+.t-item:last-child{padding-bottom:0;}
+.t-item::before{content:"";position:absolute;left:-26px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--accent);}
+.t-date{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--teal);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;}
+.t-role{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:600;margin:0 0 2px;}
+.t-org{font-size:0.88rem;color:var(--ink-soft);margin:0 0 10px;}
+.t-list{margin:0;padding-left:18px;color:var(--ink-soft);font-size:0.9rem;}
+.t-list li{margin-bottom:5px;}
+
+/* grid cards (projects/papers) */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.item-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;}
+.item-card .status{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:9px;}
 .item-card .status.live{color:var(--teal);}
 .item-card .status.progress{color:var(--accent);}
-.item-card h4{font-family:'Fraunces',serif;font-size:1.08rem;margin:0 0 8px;font-weight:600;}
-.item-card p{font-size:0.9rem;color:var(--ink-soft);margin:0 0 14px;flex-grow:1;}
-.item-card a{font-size:0.85rem;color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--line);align-self:flex-start;}
+.item-card h4{font-family:'Fraunces',serif;font-size:1.04rem;margin:0 0 8px;font-weight:600;}
+.item-card p{font-size:0.88rem;color:var(--ink-soft);margin:0 0 12px;flex-grow:1;}
+.item-card a{font-size:0.83rem;color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--line);align-self:flex-start;}
 .item-card a:hover{border-color:var(--accent);color:var(--accent);}
 
-/* ---------- about ---------- */
-.about-body{max-width:64ch;color:var(--ink-soft);font-size:0.98rem;}
-.about-body p{margin:0 0 14px;}
-.skills-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+/* skills */
+.skills-block{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-bottom:8px;}
+.skills-cat h5{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal);margin:0 0 10px;}
+.skills-pills{display:flex;flex-wrap:wrap;gap:7px;}
 
-/* ---------- contact ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;}
-.contact-info p{color:var(--ink-soft);font-size:0.95rem;margin:0 0 18px;}
-.contact-links{display:flex;flex-direction:column;gap:10px;}
-.contact-links a{color:var(--ink);text-decoration:none;font-size:0.92rem;font-weight:500;}
+/* about */
+.about-body{max-width:66ch;color:var(--ink-soft);font-size:0.96rem;}
+.about-body p{margin:0 0 14px;}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;}
+.contact-info p{color:var(--ink-soft);font-size:0.93rem;margin:0 0 16px;}
+.contact-links{display:flex;flex-direction:column;gap:9px;}
+.contact-links a{color:var(--ink);text-decoration:none;font-size:0.9rem;font-weight:500;}
 .contact-links a:hover{color:var(--accent);}
-form{display:flex;flex-direction:column;gap:12px;}
-label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-soft);}
-input,textarea{
-  font-family:'IBM Plex Sans',sans-serif;font-size:0.95rem;
-  padding:11px 13px;border:1px solid var(--line);border-radius:var(--radius);
-  background:var(--card);color:var(--ink);resize:vertical;
-}
+form{display:flex;flex-direction:column;gap:11px;}
+label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-soft);}
+input,textarea{font-family:'IBM Plex Sans',sans-serif;font-size:0.92rem;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--ink);resize:vertical;}
 input:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal);}
-.form-status{font-size:0.85rem;font-family:'IBM Plex Mono',monospace;min-height:18px;}
+.form-status{font-size:0.83rem;font-family:'IBM Plex Mono',monospace;min-height:18px;}
 .form-status.ok{color:var(--teal);}
 .form-status.err{color:var(--accent);}
 
-footer{
-  padding:30px 0 50px;text-align:center;
-  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink-soft);
-}
+footer{padding:28px 0 46px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--ink-soft);}
 
 @media(max-width:640px){
   .grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
-  nav ul{gap:16px;}
-  .nav-inner{flex-direction:column;gap:10px;align-items:flex-start;}
+  nav ul{gap:14px;}
 }
-
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *{transition:none !important;}
-}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
 </style>
 </head>
 <body>
@@ -225,10 +154,12 @@ footer{
     <div class="wordmark" id="nav-name">Name<span>.</span></div>
     <nav>
       <ul>
-        <li><a href="#work">Latest Work</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#papers">Papers</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">Overview</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -241,8 +172,8 @@ footer{
     <div class="hero-inner">
       <div class="hero-text">
         <div class="eyebrow" id="hero-eyebrow">Researcher</div>
-        <h1 id="hero-title">Building <em>bilingual</em> AI research.</h1>
-        <p class="lede" id="hero-lede">Short description goes here.</p>
+        <h1 id="hero-title">Title</h1>
+        <p class="lede" id="hero-lede">Lede</p>
         <div class="hero-meta" id="hero-meta"></div>
         <div class="cta-row">
           <a href="#work" class="btn btn-solid">See latest work</a>
@@ -253,34 +184,44 @@ footer{
     </div>
   </section>
 
+  <div class="updates">
+    <span class="u-label">Updates</span>
+    <ul id="updates-list"></ul>
+  </div>
+
   <section id="work">
-    <div class="section-head">
-      <h2>Latest Work</h2>
-      <span class="tag">Currently in focus</span>
-    </div>
+    <div class="section-head"><h2>Latest Work</h2><span class="tag">Currently in focus</span></div>
     <div id="latest-work-container"></div>
   </section>
 
+  <section id="experience">
+    <div class="section-head"><h2>Experience</h2><span class="tag" id="exp-count"></span></div>
+    <div class="timeline" id="experience-container"></div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2><span class="tag" id="edu-count"></span></div>
+    <div class="timeline" id="education-container"></div>
+  </section>
+
+  <section id="publications">
+    <div class="section-head"><h2>Publications</h2><span class="tag" id="pubs-count"></span></div>
+    <div class="grid" id="publications-container"></div>
+  </section>
+
   <section id="projects">
-    <div class="section-head">
-      <h2>Projects</h2>
-      <span class="tag" id="projects-count"></span>
-    </div>
+    <div class="section-head"><h2>Notable Projects</h2><span class="tag" id="projects-count"></span></div>
     <div class="grid" id="projects-container"></div>
   </section>
 
-  <section id="papers">
-    <div class="section-head">
-      <h2>Papers &amp; Writing</h2>
-      <span class="tag" id="papers-count"></span>
-    </div>
-    <div class="grid" id="papers-container"></div>
+  <section id="skills">
+    <div class="section-head"><h2>Skills</h2></div>
+    <div class="skills-block" id="skills-block"></div>
   </section>
 
   <section id="about">
     <div class="section-head"><h2>Overview</h2></div>
     <div class="about-body" id="about-body"></div>
-    <div class="skills-row" id="skills-row"></div>
   </section>
 
   <section id="contact">
@@ -292,18 +233,9 @@ footer{
       </div>
       <div>
         <form id="contact-form">
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
+          <div><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+          <div><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+          <div><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
           <button type="submit" class="btn btn-solid" style="justify-content:center;">Send message</button>
           <div class="form-status" id="form-status"></div>
         </form>
@@ -312,7 +244,6 @@ footer{
   </section>
 
   <footer id="footer-text">© 2026</footer>
-
 </div>
 
 <script>
@@ -320,116 +251,216 @@ const PHOTO_B64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBA
 
 /* ================================================================
    EDIT ZONE — change everything below to update your whole site.
-   No HTML/CSS knowledge needed. Just edit the text between quotes.
+   No HTML/CSS knowledge needed. Edit text between quotes/brackets.
    ================================================================ */
 const DATA = {
-  name: "Akram Taha",
-  role: "PhD Candidate · NLP & Multilingual AI",
+  name: "Akram Taha Zeyad",
+  role: "AI Researcher · Assistant Lecturer · PhD Candidate",
   eyebrow: "FTSM, Universiti Kebangsaan Malaysia",
   photo: PHOTO_B64,
 
-  heroTitleHTML: "Building <em>bilingual</em> RAG systems for low-resource languages.",
-  heroLede: "PhD researcher working on multilingual Retrieval-Augmented Generation for Arabic and Malay, combining RAG with LoRA/PEFT fine-tuning of mT5. Malaysia International Scholarship (MIS 2025) recipient.",
+  heroTitleHTML: "Multilingual <em>RAG</em> &amp; LLM research for Arabic and Malay.",
+  heroLede: "PhD candidate specializing in multilingual Retrieval-Augmented Generation and LLM fine-tuning for low-resource languages. Assistant Lecturer with 4+ years of teaching experience, 3 published AI papers, and hands-on expertise across NLP, deep learning, and computer vision. Malaysia International Scholarship (MIS 2025) recipient.",
 
   heroMeta: [
-    { label: "Based in", value: "Kajang, Malaysia" },
+    { label: "Based in", value: "Kajang, Selangor, Malaysia" },
     { label: "Supervisor", value: "Dr. Lailatul Qadri Zakaria" },
-    { label: "Scholarship", value: "MIS 2025" }
+    { label: "Phone", value: "+60 17-434 0106" }
   ],
 
-  // ---- Featured "latest work" — appears at the top, big card ----
+  updates: [
+    "<b>2026</b> — Started PhD in Information Science &amp; Technology (NLP/AI) at UKM under Dr. Lailatul Qadri Zakaria.",
+    "<b>2026</b> — Co-authoring PII redaction paper (Arabic–English code-mixed text, XLM-RoBERTa + LoRA + regex).",
+    "<b>2025</b> — Co-authored APO-DRL framework for IoT/5G optimization, in revision for IEEE IoT Journal / Sensors MDPI.",
+    "<b>2025</b> — Awarded the Malaysia International Scholarship (MIS 2025)."
+  ],
+
   latestWork: {
     kicker: "Latest project",
     title: "RAG + LoRA on mT5 for Arabic & Malay Dialogue",
-    description: "A retrieval-augmented dialogue prototype combining FAISS retrieval with LoRA-tuned mT5-small, achieving strong retrieval accuracy in Arabic and Malay while keeping trainable parameters under 1% of the base model.",
+    description: "PhD prototype: FAISS retrieval + LoRA-tuned mT5-small for multilingual dialogue. Arabic BLEU 0.880, Malay BLEU 0.733, with LoRA keeping trainable parameters under 1% of the base model.",
     tags: ["RAG", "LoRA / PEFT", "mT5", "Arabic NLP", "Malay NLP"],
     links: [
       { label: "View project →", url: "#" },
-      { label: "GitHub repo →", url: "https://github.com/Akramtaha98" }
+      { label: "GitHub repo →", url: "https://github.com/Akramtahaxzx" }
     ]
   },
 
-  // ---- Projects grid ----
+  experience: [
+    {
+      date: "Oct 2025 – Present",
+      role: "Assistant Lecturer",
+      org: "University of Technology-Iraq · Baghdad, Iraq",
+      points: [
+        "Design and deliver lectures on Python programming and Artificial Intelligence, achieving a 30% improvement in student comprehension scores.",
+        "Lead AI research initiatives resulting in 3 peer-reviewed publications on healthcare and education AI applications.",
+        "Collaborate with faculty to redesign the Computer Science curriculum.",
+        "Mentor 50+ students on AI capstone projects, guiding all advised students to top assessment marks."
+      ]
+    },
+    {
+      date: "Apr 2023 – Oct 2025",
+      role: "Assistant Engineer",
+      org: "University of Technology-Iraq · Baghdad, Iraq",
+      points: [
+        "Supported faculty and student engineering projects by planning, executing, and optimizing technical workflows.",
+        "Built and deployed Python-based applications and data pipelines to improve research and teaching efficiency.",
+        "Provided technical mentorship to students, contributing to improved academic outcomes."
+      ]
+    },
+    {
+      date: "Dec 2021 – Sep 2022",
+      role: "Technical Support Engineer",
+      org: "HRINS Company · Baghdad, Iraq",
+      points: [
+        "Resolved 200+ customer technical issues monthly, sustaining a 95% customer satisfaction rate.",
+        "Implemented a new ticketing system that cut average response time by 30%.",
+        "Developed a self-service knowledge base, increasing self-service support usage by 20%."
+      ]
+    },
+    {
+      date: "Nov 2019 – Sep 2020",
+      role: "Telephone & Medical Equipment Technician",
+      org: "Al-Wahj Company · Baghdad, Iraq",
+      points: [
+        "Diagnosed and repaired telephone and medical equipment, ensuring high uptime for healthcare clients.",
+        "Applied systematic troubleshooting methodologies to minimize equipment downtime."
+      ]
+    }
+  ],
+
+  education: [
+    {
+      date: "2026 – Present",
+      role: "PhD — Information Science & Technology (NLP / AI)",
+      org: "Universiti Kebangsaan Malaysia (UKM) · Bangi, Malaysia",
+      points: [
+        "Research focus: multilingual RAG-enhanced dialogue systems for Arabic and Malay low-resource languages.",
+        "Combining RAG with LoRA/PEFT fine-tuning of mT5; Arabic retrieval accuracy ~0.880.",
+        "Supported by the Malaysia International Scholarship (MIS 2025); supervised by Dr. Lailatul Qadri Zakaria."
+      ]
+    },
+    {
+      date: "Sep 2022 – Mar 2024",
+      role: "Master of Artificial Intelligence",
+      org: "Universiti Kebangsaan Malaysia (UKM) · Bangi, Malaysia",
+      points: [
+        "Thesis: deep learning models for medical image analysis and education-focused AI tools.",
+        "Built end-to-end ML pipelines using Python, PyTorch/TensorFlow, OpenCV, and scikit-learn.",
+        "Coursework: Deep Learning, Computer Vision, NLP, Reinforcement Learning, Advanced Statistics."
+      ]
+    },
+    {
+      date: "Dec 2016 – Sep 2021",
+      role: "BSc — Computer Engineering",
+      org: "University of Technology · Baghdad, Iraq",
+      points: [
+        "Capstone: real-time object detection embedded vision system using OpenCV and a lightweight CNN on low-power hardware.",
+        "Coursework: Digital Systems, Algorithms, Embedded Systems, Signal Processing, C/C++, Python, Microcontrollers."
+      ]
+    }
+  ],
+
+  publications: [
+    {
+      status: "Drafting",
+      statusClass: "progress",
+      title: "Arabic & Malay Absence from RAG Evaluation Benchmarks",
+      description: "Literature review in progress. Target journal: JAIR (WOS Q1).",
+      link: { label: "Read draft", url: "#" }
+    },
+    {
+      status: "In Revision",
+      statusClass: "progress",
+      title: "APO-DRL Framework for IoT/5G Optimization",
+      description: "Co-author. In revision for IEEE IoT Journal / Sensors MDPI (2025).",
+      link: { label: "Read", url: "#" }
+    },
+    {
+      status: "In Progress",
+      statusClass: "progress",
+      title: "PII Redaction in Arabic–English Code-Mixed Text",
+      description: "Co-author. XLM-RoBERTa + LoRA + regex hybrid framework (2026).",
+      link: { label: "Read", url: "#" }
+    },
+    {
+      status: "Published",
+      statusClass: "live",
+      title: "3 Peer-Reviewed AI Publications — Healthcare & Education",
+      description: "University of Technology-Iraq, 2023–2025.",
+      link: { label: "View", url: "#" }
+    }
+  ],
+
   projects: [
     {
       status: "In Progress",
       statusClass: "progress",
-      title: "Multilingual RAG Dialogue System",
-      description: "Core PhD prototype: RAG pipeline + LoRA fine-tuning of mT5 for Arabic/Malay retrieval and generation.",
+      title: "Multilingual RAG + LoRA Dialogue System",
+      description: "PhD prototype — mT5-small fine-tuned with PEFT. Arabic BLEU 0.880, Malay BLEU 0.733.",
       link: { label: "Details", url: "#" }
     },
     {
       status: "Live",
       statusClass: "live",
       title: "PaperBrief",
-      description: "AI-powered research paper summarizer exploring freemium models for Arabic-language AI tools.",
+      description: "AI-powered research paper summarizer with a freemium model; zero-cost deployment via Gemini Flash & Groq APIs.",
       link: { label: "View", url: "#" }
     },
     {
       status: "In Progress",
       statusClass: "progress",
       title: "Multi-Agent Framework Comparison",
-      description: "Comparative study of CrewAI, AutoGen, and LangGraph for academic multi-agent research pipelines.",
+      description: "CrewAI vs AutoGen vs LangGraph — academic publication in progress.",
       link: { label: "Details", url: "#" }
+    },
+    {
+      status: "Complete",
+      statusClass: "live",
+      title: "Wikipedia Traffic Forecasting",
+      description: "Multilingual time-series forecasting model across multiple languages.",
+      link: { label: "View", url: "#" }
     }
   ],
 
-  // ---- Papers grid ----
-  papers: [
-    {
-      status: "Drafting",
-      statusClass: "progress",
-      title: "RAG-LoRA for Low-Resource Dialogue (Target: JAIR)",
-      description: "Q1 target journal, WOS-indexed, free APC. Core PhD contribution on Arabic/Malay RAG dialogue.",
-      link: { label: "Read draft", url: "#" }
-    },
-    {
-      status: "Drafted",
-      statusClass: "progress",
-      title: "Literature Review — RAG Benchmark Gaps",
-      description: "72 APA references, 5 comparison tables. Frames the absence of Arabic & Malay from major RAG benchmarks.",
-      link: { label: "Read", url: "#" }
-    },
-    {
-      status: "Collaboration",
-      statusClass: "live",
-      title: "Hybrid PII Redaction (Arabic–English code-mixed)",
-      description: "XLM-RoBERTa + LoRA framework, developed with a colleague at University of Technology, Iraq.",
-      link: { label: "Read", url: "#" }
-    }
+  skills: [
+    { category: "Languages & Frameworks", items: ["Python", "PyTorch", "TensorFlow", "Hugging Face Transformers", "Django", "Flask"] },
+    { category: "NLP & LLM", items: ["RAG Systems", "LoRA / PEFT", "mT5", "XLM-RoBERTa", "Multilingual NLP", "Text Classification"] },
+    { category: "ML & Data", items: ["Computer Vision", "Deep Learning", "OpenCV", "scikit-learn", "SQL / NoSQL"] },
+    { category: "Tools & Platforms", items: ["Git / GitHub", "MATLAB", "LangGraph", "CrewAI", "AutoGen", "FAISS / Vector DBs"] },
+    { category: "Human Languages", items: ["Arabic (Native)", "English (Professional)", "Malay (Basic)"] }
   ],
 
   aboutParagraphs: [
     "I'm a PhD candidate at the Faculty of Information Science and Technology (FTSM), Universiti Kebangsaan Malaysia, supervised by Dr. Lailatul Qadri Zakaria, and a Malaysia International Scholarship (MIS 2025) recipient. My research focuses on multilingual Retrieval-Augmented Generation (RAG) dialogue systems for Arabic and Malay — two low-resource languages largely absent from current RAG evaluation benchmarks — combining RAG with LoRA/PEFT fine-tuning of the mT5 multilingual model.",
-    "Before my PhD, I worked as an academic researcher and technical educator in Iraq, with prior affiliation at the University of Technology, Baghdad. I'm also a MATLAB expert and have a long-standing interest in Python, Django, deep learning, and applied NLP — including exploring multi-agent AI frameworks like CrewAI, AutoGen, and LangGraph.",
+    "I'm also an Assistant Lecturer at the University of Technology-Iraq with 4+ years of teaching experience, 3 published AI papers in healthcare and education domains, and hands-on expertise in Python, deep learning, NLP, and computer vision. I've designed and deployed end-to-end ML pipelines and mentored 50+ students on AI capstone projects.",
     "Outside my core PhD work, I take on freelance and technical projects, and I'm always open to collaboration on Arabic/Malay language technology, RAG systems, or applied ML engineering."
   ],
-
-  skills: ["Python", "PyTorch", "RAG", "LoRA/PEFT", "mT5", "FAISS", "NLP", "Arabic & Malay Language Tech", "MATLAB", "CrewAI / AutoGen / LangGraph"],
 
   contactBlurb: "Open to research collaboration, freelance NLP/AI work, and academic opportunities.",
   contactLinks: [
     { label: "Email — akram.t.zeyad@uotechnology.edu.iq", url: "mailto:akram.t.zeyad@uotechnology.edu.iq" },
-    { label: "GitHub", url: "https://github.com/Akramtaha98" },
+    { label: "Phone — +60 17-434 0106", url: "tel:+60174340106" },
+    { label: "GitHub", url: "https://github.com/Akramtahaxzx" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/akram-t-44a095b6/" }
   ],
 
-  // Your Formspree form ID — replace YOUR_FORM_ID below
+  // Your Formspree form ID — replace YOUR_FORM_ID below (sign up at formspree.io)
   formspreeId: "YOUR_FORM_ID",
 
-  footerText: "© 2026 Akram · Built with plain HTML"
+  footerText: "© 2026 Akram Taha Zeyad · Built with plain HTML"
 };
 /* ================== END EDIT ZONE ================== */
 
 
 // ---------- render logic (no need to touch below) ----------
-document.getElementById('nav-name').innerHTML = DATA.name + '<span>.</span>';
+document.getElementById('nav-name').innerHTML = DATA.name.split(' ')[0] + '<span>.</span>';
 document.getElementById('hero-eyebrow').textContent = DATA.eyebrow;
 document.getElementById('hero-title').innerHTML = DATA.heroTitleHTML;
 document.getElementById('hero-lede').textContent = DATA.heroLede;
 document.getElementById('footer-text').textContent = DATA.footerText;
 document.getElementById('contact-blurb').textContent = DATA.contactBlurb;
-document.title = DATA.name + " — Researcher Profile";
+document.title = DATA.name + " — AI Researcher";
 if(DATA.photo){
   const heroImg = document.getElementById('hero-photo-img');
   heroImg.src = DATA.photo;
@@ -443,6 +474,8 @@ DATA.heroMeta.forEach(m => {
   metaEl.appendChild(span);
 });
 
+document.getElementById('updates-list').innerHTML = DATA.updates.map(u => `<li>${u}</li>`).join('');
+
 const lw = DATA.latestWork;
 document.getElementById('latest-work-container').innerHTML = `
   <div class="feature-card">
@@ -454,8 +487,22 @@ document.getElementById('latest-work-container').innerHTML = `
   </div>
 `;
 
-function renderCards(list, containerId, countId, noun){
-  document.getElementById(countId).textContent = list.length + ' ' + noun;
+function renderTimeline(list, containerId, countId){
+  document.getElementById(countId).textContent = list.length + ' entries';
+  document.getElementById(containerId).innerHTML = list.map(item => `
+    <div class="t-item">
+      <div class="t-date">${item.date}</div>
+      <h4 class="t-role">${item.role}</h4>
+      <p class="t-org">${item.org}</p>
+      <ul class="t-list">${item.points.map(p => `<li>${p}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+}
+renderTimeline(DATA.experience, 'experience-container', 'exp-count');
+renderTimeline(DATA.education, 'education-container', 'edu-count');
+
+function renderCards(list, containerId, countId){
+  document.getElementById(countId).textContent = list.length + ' total';
   document.getElementById(containerId).innerHTML = list.map(item => `
     <div class="item-card">
       <span class="status ${item.statusClass}">${item.status}</span>
@@ -465,17 +512,22 @@ function renderCards(list, containerId, countId, noun){
     </div>
   `).join('');
 }
-renderCards(DATA.projects, 'projects-container', 'projects-count', 'total');
-renderCards(DATA.papers, 'papers-container', 'papers-count', 'total');
+renderCards(DATA.publications, 'publications-container', 'pubs-count');
+renderCards(DATA.projects, 'projects-container', 'projects-count');
+
+document.getElementById('skills-block').innerHTML = DATA.skills.map(s => `
+  <div class="skills-cat">
+    <h5>${s.category}</h5>
+    <div class="skills-pills">${s.items.map(i => `<span class="tag-pill">${i}</span>`).join('')}</div>
+  </div>
+`).join('');
 
 document.getElementById('about-body').innerHTML = DATA.aboutParagraphs.map(p => `<p>${p}</p>`).join('');
-document.getElementById('skills-row').innerHTML = DATA.skills.map(s => `<span class="tag-pill">${s}</span>`).join('');
 
 document.getElementById('contact-links').innerHTML = DATA.contactLinks.map(l =>
   `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`
 ).join('');
 
-// Formspree submit handling
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
 form.addEventListener('submit', async function(e){
